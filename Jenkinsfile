@@ -25,7 +25,7 @@ pipeline {
           sh '''
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 764242751754.dkr.ecr.us-east-1.amazonaws.com
           docker build -t upgrad-deb82:${BUILD_NUMBER} .
-          docker tag upgrad-deb82:latest 764242751754.dkr.ecr.us-east-1.amazonaws.com/upgrad-deb82:${BUILD_NUMBER}
+          docker tag upgrad-deb82:latest 764242751754.dkr.ecr.us-east-1.amazonaws.com/upgrad-deb82:${BUILD_NUMBER}'
           docker push 764242751754.dkr.ecr.us-east-1.amazonaws.com/upgrad-deb82:${BUILD_NUMBER}
           '''
         }
